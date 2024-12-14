@@ -1,0 +1,10 @@
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    @for (control of formConfig; track control) {
+        <div>
+            <label>{{ control }}</label>
+            <input [formControlName]="control">
+        </div>
+    }
+
+    <button type="submit">Submit</button>
+</form>

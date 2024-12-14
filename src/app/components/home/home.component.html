@@ -1,0 +1,43 @@
+<!-- data binding 
+Data Binding in Angular is a way to link your app's data with the user interface, so changes in the data automatically update the display, and user actions can update the data. -->
+
+<div>
+    {{title}}
+</div>
+
+<!-- two way data binding  -->
+<input type="text" [(ngModel)]="name">
+<div>{{name}}</div>
+
+<!-- property event binding is also part of a two way data binding -->
+ 
+
+<h1>Pass Data one component to another component</h1>
+
+<app-child (dataToParent)="handleDataFromChild($event)" [data]="data"></app-child>
+
+
+<h2>Get data from child</h2>
+
+<div>{{receivedData}}</div>
+
+
+<h1>Call child method directly</h1>
+<button (click)="callChildMethod()">call child method</button>
+
+
+
+<app-orders></app-orders>
+
+
+<app-register></app-register>
+
+
+<h1>Pipes</h1>
+
+<div>{{'ramuknamar' | reverseString}}</div>
+
+
+<div appChangesHover>
+    Hover over me to see the background color change!
+  </div>
