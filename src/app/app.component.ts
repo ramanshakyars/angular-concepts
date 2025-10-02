@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,16 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'AngularMaster';
+
+    constructor(private router: Router) {}
+
+  navigateToPatient(): void {
+    this.router.navigate([{ outlets: { aux: ['patient'] } }]);
+  }
+
+  navigateToAdmin(): void {
+    this.router.navigate([{ outlets: { aux: null } }]); // Clear the auxiliary route
+  }
 
   
 
